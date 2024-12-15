@@ -1,6 +1,6 @@
 networks:
   default:
-    external:
+    external: true
       name: roboshop
 services:
   # docker run -d --name mongodb mongodb:1.0
@@ -14,6 +14,7 @@ services:
     - roboshop
     depends_on: 
     - mongodb
+  # docker run -d -p 80:80 --name mongodb mongodb:1.0
   web:
     image: web:1.0
     networks:
