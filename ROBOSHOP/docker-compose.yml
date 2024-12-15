@@ -22,6 +22,9 @@ services:
     depends_on: 
       - mongodb
       - catalogue
+      - user
+      - cart
+      - redis
   redis:
     image: redis:latest
     networks:
