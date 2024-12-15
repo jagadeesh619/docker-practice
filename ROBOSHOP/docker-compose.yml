@@ -1,5 +1,3 @@
-version: "3.8"  # Add version to specify Compose file format
-
 networks:
   roboshop:
     external: true
@@ -24,3 +22,7 @@ services:
     depends_on: 
       - mongodb
       - catalogue
+  redis:
+    image: redis:1.0
+    networks:
+      - roboshop
