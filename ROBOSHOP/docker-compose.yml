@@ -1,5 +1,7 @@
 networks:
-    roboshop:
+    default:
+      external: true
+        name: roboshop
 services:
   # docker run -d --name mongodb mongodb:1.0
   mongodb:
