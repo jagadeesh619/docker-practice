@@ -8,4 +8,8 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 
 COPY roboshop.conf /etc/nginx/nginx.conf
 
-ADD static /usr/share/nginx/html/
+# folder will not copy , only files in it will copy to /usr/share/nginx/html
+
+ADD static /usr/share/nginx/html/   
+
+
