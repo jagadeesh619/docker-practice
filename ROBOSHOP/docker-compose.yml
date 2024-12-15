@@ -23,6 +23,21 @@ services:
       - mongodb
       - catalogue
   redis:
-    image: redis:1.0
+    image: redis:latest
     networks:
       - roboshop
+  user:
+    image: user:1.0
+    networks:
+      - roboshop
+    depends_on:
+      - redis
+      - mongodb
+  cart:
+    image: cart:1.0
+    networks:
+      - roboshop
+    depends_on:
+      - redis
+      - catalogue
+
