@@ -1,31 +1,26 @@
+version: "3.8"  # Add version to specify Compose file format
+
 networks:
-    default:
-      external:
-        name: roboshop
+  roboshop:
+    external: true
+
 services:
-  # docker run -d --name mongodb mongodb:1.0
   mongodb:
     image: mongodb:1.0
-    # networks:
-    #   - roboshop
+    networks:
+      - roboshop
   catalogue:
     image: catalogue:1.0
-    # networks:
-    #   - roboshop
+    networks:
+      - roboshop
     depends_on: 
       - mongodb
-  # docker run -d -p 80:80 --name mongodb mongodb:1.0
   web:
     image: web:1.0
-    # networks:
-    #   - roboshop
+    networks:
+      - roboshop
     ports:
-    - "80:80"
+      - "80:80"
     depends_on: 
       - mongodb
       - catalogue
-
-
-
-
-
