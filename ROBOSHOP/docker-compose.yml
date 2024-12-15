@@ -5,16 +5,19 @@ networks:
 services:
   mongodb:
     image: mongodb:1.0
+    container_name: mongodb
     networks:
       - roboshop
   catalogue:
     image: catalogue:1.0
+    container_name: catalogue
     networks:
       - roboshop
     depends_on: 
       - mongodb
   web:
     image: web:1.0
+    container_name: web
     networks:
       - roboshop
     ports:
@@ -27,10 +30,12 @@ services:
       - redis
   redis:
     image: redis:latest
+    container_name: redis
     networks:
       - roboshop
   user:
     image: user:1.0
+    container_name: user
     networks:
       - roboshop
     depends_on:
@@ -38,6 +43,7 @@ services:
       - mongodb
   cart:
     image: cart:1.0
+    container_name: cart
     networks:
       - roboshop
     depends_on:
@@ -45,6 +51,7 @@ services:
       - catalogue
   mysql:
     image: mysql:1.0
+    container_name: mysql
     networks:
       - roboshop
     
