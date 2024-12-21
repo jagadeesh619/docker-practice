@@ -68,7 +68,6 @@ services:
   mysql:
     image: mysql:1.0
     container_name: mysql
-    memory-swap: 20g
     environment:
       - MYSQL_INNODB_BUFFER_POOL_SIZE=2G
       - MYSQL_MAX_CONNECTIONS=1000
@@ -76,13 +75,6 @@ services:
     #   - MYSQL_DATABASE=cities
     #   - MYSQL_USER=shipping 
     #   - MYSQL_PASSWORD=RoboShop@1
-    deploy:
-      resources:
-        limits:
-          memory: 15G
-          swap: 20G
-    mem_limit: 15g
-    memswap_limit: 20g
     networks:
       - roboshop
 
