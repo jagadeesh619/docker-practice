@@ -58,6 +58,10 @@ services:
       - MYSQL_DATABASE=cities
       - MYSQL_USER=shipping 
       - MYSQL_PASSWORD=RoboShop@1
+    deploy:
+      resources:
+        limits:
+          memory: 8g
     networks:
       - roboshop
 
@@ -66,6 +70,10 @@ services:
     container_name: shipping
     networks:
       - roboshop
+    deploy:
+      resources:
+        limits:
+          memory: 8g
     depends_on:
       - mysql
   payment:
