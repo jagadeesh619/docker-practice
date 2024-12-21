@@ -71,10 +71,10 @@ services:
     environment:
       - MYSQL_INNODB_BUFFER_POOL_SIZE=2G
       - MYSQL_MAX_CONNECTIONS=1000
-    #   - MYSQL_ROOT_PASSWORD=RoboShop@1
-    #   - MYSQL_DATABASE=cities
-    #   - MYSQL_USER=shipping 
-    #   - MYSQL_PASSWORD=RoboShop@1
+      - MYSQL_ROOT_PASSWORD=RoboShop@1
+      - MYSQL_DATABASE=cities
+      - MYSQL_USER=shipping 
+      - MYSQL_PASSWORD=RoboShop@1
     networks:
       - roboshop
 
