@@ -73,7 +73,7 @@ services:
       - cart
       - user
   rabbitmq:
-    image: rabbitmq:1.0
+    image: rabbitmq
     container_name: rabbitmq
     environment:
       - RABBITMQ_DEFAULT_USER=roboshop
