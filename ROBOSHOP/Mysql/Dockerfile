@@ -1,5 +1,4 @@
-FROM mysql:5.7
-RUN apk update && apk add procps
+FROM mysql:8
 ENV MYSQL_ROOT_PASSWORD=RoboShop@1 \
     MYSQL_DATABASE=cities \
     MYSQL_USER=shipping \
