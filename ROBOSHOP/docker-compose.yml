@@ -39,6 +39,10 @@ services:
     container_name: user
     networks:
       - roboshop
+    deploy:
+      resources:
+        limits:
+          memory: 8g
     depends_on:
       - redis
       - mongodb
@@ -47,6 +51,10 @@ services:
     container_name: cart
     networks:
       - roboshop
+    deploy:
+      resources:
+        limits:
+          memory: 8g
     depends_on:
       - redis
       - catalogue
@@ -58,10 +66,6 @@ services:
       - MYSQL_DATABASE=cities
       - MYSQL_USER=shipping 
       - MYSQL_PASSWORD=RoboShop@1
-    deploy:
-      resources:
-        limits:
-          memory: 8g
     networks:
       - roboshop
 
@@ -70,12 +74,9 @@ services:
     container_name: shipping
     networks:
       - roboshop
-    deploy:
-      resources:
-        limits:
-          memory: 8g
     depends_on:
       - mysql
+
   payment:
     image: payment:1.0
     container_name: payment
