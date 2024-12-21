@@ -28,6 +28,7 @@ services:
       - user
       - cart
       - redis
+      - shipping
   redis:
     image: redis:latest
     container_name: redis
@@ -54,5 +55,14 @@ services:
     container_name: mysql
     networks:
       - roboshop
+
+  shipping:
+    image: shipping:1.0
+    container_name: shipping
+    networks:
+      - roboshop
+    depends_on:
+      - mysql
+
     
 
