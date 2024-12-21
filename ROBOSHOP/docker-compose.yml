@@ -76,6 +76,13 @@ services:
     #   - MYSQL_DATABASE=cities
     #   - MYSQL_USER=shipping 
     #   - MYSQL_PASSWORD=RoboShop@1
+    deploy:
+      resources:
+        limits:
+          memory: 15G
+          swap: 20G
+    mem_limit: 15g
+    memswap_limit: 20g
     networks:
       - roboshop
 
