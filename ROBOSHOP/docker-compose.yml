@@ -53,6 +53,11 @@ services:
   mysql:
     image: mysql:1.0
     container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=RoboShop@1
+      - MYSQL_DATABASE=cities
+      - MYSQL_USER=shipping 
+      - MYSQL_PASSWORD=RoboShop@1
     networks:
       - roboshop
 
