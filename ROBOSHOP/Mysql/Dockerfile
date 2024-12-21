@@ -1,5 +1,5 @@
 FROM mysql:5.7
-RUN apt-get update && apt-get install -y procps
+RUN apk update && apk add procps
 ENV MYSQL_ROOT_PASSWORD=RoboShop@1 \
     MYSQL_DATABASE=cities \
     MYSQL_USER=shipping \
