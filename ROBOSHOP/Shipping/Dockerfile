@@ -24,4 +24,4 @@ ENV DB_HOST=mysql
 
 COPY --from=build /opt/shipping/target/shipping-1.0.jar shipping.jar
 
-CMD [ "java", "-Xmn512m", "-Xmx1024m", "-jar", "shipping.jar" ]
+CMD [ "java", "-Xms1750m", "-Xmx1750m", "-jar", "shipping.jar" ]
